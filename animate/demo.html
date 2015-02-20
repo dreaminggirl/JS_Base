@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="eventUtil.js"></script>
+		<script type="text/javascript" src="animate.js"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: lightblue;
+				position: relative;
+				left: -200px;
+				top: 0;
+				border: 2px solid blue;
+				border-left: none;
+				text-align: center;
+				line-height: 200px;
+			}
+			#div1 i{
+				font:30px  "arial narrow";
+				color: white;
+			}
+			#div1 span{
+				width: 20px;
+				height: 40px;
+				line-height: 20px;
+				background: blue;
+				position: absolute; 
+				left: 200px;
+				top: 75px;
+				text-align: center;
+				color: white;
+				font-weight: bold;
+			}
+			#div2{
+				width: 200px;
+				height: 200px;
+				background: red;
+				filter:alpha(opacity=30);
+				opacity: 0.3;
+				
+			}
+			ul{
+				list-style: none;
+			}
+			ul li{
+				width: 200px;
+				height: 100px;
+				background: yellow;
+				margin-bottom:20px ;
+				filter: alpha(opacity=10);
+				opacity:0.1;
+			}
+			#div3{
+				width:50px;
+				height: 50px;
+				background: blueviolet;
+				filter: alpha(opacity=20);
+				opacity: 0.2;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1' >
+			<i>hello!!</i>
+			<span id='share'>分享</span>
+		</div>
+
+		<br />
+		<hr />
+		<div id='div2'>
+		</div>
+
+		<hr />	
+		<br />
+		<div id='div3'>
+			
+		</div>
+		
+		<hr />
+		<br />
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			window.onload=function(){
+	var oDiv=document.getElementById('div1');
+	eventUtil.addHandler(oDiv,'mouseenter',function(){
+		oDiv.timer=null;
+		startMove(oDiv,{'left':0});
+	});
+	eventUtil.addHandler(oDiv,'mouseleave',function(){
+		startMove(oDiv,{'left':-200});
+	});
+
+	var oDiv2=document.getElementById('div2');
+	eventUtil.addHandler(oDiv2,'mouseover',function(){
+		startMove(oDiv2,{'opacity':100});
+	});
+	eventUtil.addHandler(oDiv2,'mouseout',function(){
+		startMove(oDiv2,{'opacity':30});
+	})
+	var ali=document.getElementsByTagName('li');
+	
+	for(var i=0;i<ali.length;i++){
+		ali[i].timer=null;
+		ali[i].alpha=10;
+		eventUtil.addHandler(ali[i],'mouseenter',function(){
+		startMove(this,{'width':400,'opacity':100});
+	});
+		eventUtil.addHandler(ali[i],'mouseleave',function(){
+		startMove(this,{'width':200,'opacity':30});
+	});
+	}
+	var oDiv3=document.getElementById('div3');
+		eventUtil.addHandler(oDiv3,'mouseover',function(){
+			startMove(oDiv3,{'width':150,'height':70});
+		})
+		eventUtil.addHandler(oDiv3,'mouseout',function(){
+			startMove(oDiv3,{'width':50,'height':50});
+		})
+}
+		</script>
+	</body>
+</html>
