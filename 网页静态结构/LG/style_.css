@@ -1,0 +1,99 @@
+/*********************/
+* {outline:none;}
+body,p,a,span,ul,li{
+	margin: 0;
+	padding: 0;
+}
+body,html{
+	height: 100%;
+}
+ul.reset{
+	list-style: none;
+}
+#body{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 0 -37px;
+}
+body{
+	font:14px/22px Arial,"Hiragino Sans GB","微软雅黑","宋体"; 
+}
+#footer{
+	height: 37px;
+}
+/**********end globel style***********/
+			#header{
+				background: #fafafa;
+				height: 60px;
+				min-width: 1024px;
+				border-top: 3px solid #00B38A;
+			}
+			#header .wrapper{
+				width: 1024px;
+				margin: 0 auto;
+				position: relative;
+			}
+			.wrapper .logo{
+				float: left;
+				margin-top: 7px;
+				width: 229px;
+				height: 43px;
+				background: url(image/logo.png) no-repeat;
+			}
+			.wrapper .navheader{
+				float: left;
+				margin-left: 30px;
+			}
+			.navheader li{
+				float: left;
+			}
+			.wrapper .loginTop{
+				float: right;
+			}
+			.loginTop li{
+				float: left;
+			}
+			.navheader li{
+				line-height: 57px;
+				height: 60px;
+				padding: 0px 20px;				
+			}
+			.navheader li a{
+				/*float: left;*/
+				display: block;
+								height: 57px;
+				/*line-height: 57px;*/
+				text-decoration: none;
+				color: #999;
+				font-size: 20px;
+			}
+
+			.loginTop li{
+				height: 30px;
+				line-height: 30px;
+				color: #FFF;
+				background: #00B38A;
+			}
+			.loginTop li a{
+				display: block;
+
+				line-height: 30px;
+				padding: 0px 10px;
+				color: #fff;
+				text-decoration:none ;
+			}
+
+			.navheader li a:hover{
+				color: #333;
+				border-bottom: 3px solid #00B38A;
+			}
+			.loginTop li a:hover{
+				color: #CCEAE3;
+			}
+			.navheader a,.loginTop a{
+				transition: all .2s ease-in-out ;
+				-webkit-transition: all .2s ease-in-out ;
+				-moz-transition: all .2s ease-in-out ;
+				-o-transition: all .2s ease-in-out ;
+			}
