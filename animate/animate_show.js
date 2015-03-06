@@ -227,7 +227,7 @@ eventUtil.readyEvent(function(){
 			//直接判断不等为什么不行？因为速度结果可能不是整除，这样，当速度大于零时，一直以固定步速加速，会使得结果在临近目标值时，然后就差一点，导致再加步速，使得结果越过了目标值，也是属于不相等的情况。
 			if((speed<0&&parseInt(list.style.left)>newleft)||(speed>0&&parseInt(list.style.left)<newleft)){
 				list.style.left=parseInt(list.style.left)+speed+'px';
-				timer=setTimeout(go,interval)
+				setTimeout(go,interval)
 			}else{
 				animated=false;
 				list.style.left=newleft+'px';//这个就是为了处理，当判断发现越界，或者正好相等时的情况
@@ -287,4 +287,16 @@ eventUtil.readyEvent(function(){
 
 		}
 	}
+	//自动播放
+	function play(){
+		timer=setInterval(function(){
+			left.onclick();
+		},3000)
+	}
+	function stop(){
+		clearInterval(timer);
+	}
+	eventUtil.addHandler(container,'mouseover',stop);
+	eventUtil.addHandler(container,'mouseout',play);
+	play();
 })
