@@ -661,3 +661,22 @@ body{
 	display: block;
 }
 /*轮播图结束*/
+/*文本修饰开始*/
+.textDecoration{
+	font:  16px/150%  "微软雅黑";
+	width: 300px;
+	margin: 100px auto 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-shadow: 0 0 10px #000;
+	transition: all .6s ease-out;
+	color: rgba(0,0,0,0);
+}
+.textDecoration:hover{
+	overflow: auto;
+	white-space: normal;
+	text-shadow: 0 0 0px #000;
+}
+
+/*文本修饰结束*/

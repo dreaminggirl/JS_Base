@@ -244,25 +244,25 @@ eventUtil.readyEvent(function(){
 	//左右箭头
 	left.onclick=function(){
 		if(!animated){
-			if(index==1){
-				index=3;
-			}else{
-				index=index-1;
-			}
-			showButton();
-			animate(400);			
-		}
-
-	}
-	right.onclick=function(){
-		if(!animated){
 			if(index==3){
-				index=1
+				index=1;
 			}else{
 				index=index+1;
 			}
 			showButton();
 			animate(-400);			
+		}
+
+	}
+	right.onclick=function(){
+		if(!animated){
+			if(index==1){
+				index=3
+			}else{
+				index=index-1;
+			}
+			showButton();
+			animate(400);			
 		}
 
 	}
